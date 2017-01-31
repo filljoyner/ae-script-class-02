@@ -19,6 +19,9 @@ var uiResourceString = "group {\
     orientation: 'column',\
     alignment: ['left', 'top'],\
     alignChildren: ['left', 'top'],\
+    iconLogo: IconButton {\
+        preferredSize:[60,22]\
+    },\
     mainTextGroup: Group {\
         orientation: 'row',\
         mainTextLabel: StaticText {\
@@ -103,6 +106,8 @@ var uiResourceString = "group {\
 
 // Create Panel
 var scriptUIPanel = createPanel(this, uiResourceString, 'Lower Third');
+
+scriptUIPanel.iconLogo.image = new File("C:\\Users\\fillj\\OneDrive\\Code\\AfterFX\\Learning\\class-02\\img\\logo.png");
 
 
 
