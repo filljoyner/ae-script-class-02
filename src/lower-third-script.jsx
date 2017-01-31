@@ -106,7 +106,7 @@ var uiResourceString = "group {\
 
 // Create Panel
 var scriptUIPanel = createPanel(this, uiResourceString, 'Lower Third');
-
+// add image to iconLogo
 scriptUIPanel.iconLogo.image = new File("C:\\Users\\fillj\\OneDrive\\Code\\AfterFX\\Learning\\class-02\\img\\logo.png");
 
 
