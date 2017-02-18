@@ -32,5 +32,4 @@ function fileToBinaryString() {
 }
 
 
-
 fileToBinaryString();

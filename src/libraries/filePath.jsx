@@ -1,8 +1,7 @@
 #include "OS.jsx";
 
 function joinPath(components) {
-    var pathSeparator = getPathSeparatorSymbol();
-    return components.join(pathSeparator);
+    return components.join(getPathSeparatorSymbol());
 }
 
 function getPathSeparatorSymbol() {

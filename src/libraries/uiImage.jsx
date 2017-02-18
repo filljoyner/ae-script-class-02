@@ -2,12 +2,9 @@
 #include "filePath.jsx";
 
 function getUIImage(fileName, toolName, rawData) {
-    var filePath = getImagePath(fileName, toolName);
-    var file = getBinaryFile(filePath, rawData);
-    return file;
+    return getBinaryFile(getImagePath(fileName, toolName), rawData);
 
     function getImagePath(fileName, toolName) {
-        var filePath = joinPath([getUserDataFolderPath(), toolName, fileName]);
-        return filePath;
+        return joinPath([getUserDataFolderPath(), toolName, fileName]);
     }
 }

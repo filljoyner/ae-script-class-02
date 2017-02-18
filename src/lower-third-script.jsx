@@ -112,7 +112,12 @@ var uiResourceString = "group {\
 var scriptUIPanel = createPanel(this, uiResourceString, panelName);
 // add image to iconLogo
 #include "../img/logo.png.jsx";
-scriptUIPanel.iconLogo.image = getUIImage("logo.png", scriptName, logopng);
+
+try {
+    scriptUIPanel.iconLogo.image = getUIImage("logo.png", scriptName, logopng);
+} catch(err) {
+    alert("failed to create UI images: " + err.toString());
+}
 
 
 
