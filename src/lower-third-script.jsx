@@ -6,6 +6,7 @@ Imports
 #include "libraries/ae-helpers.jsx";
 #include "libraries/helpers.jsx";
 #include "libraries/ui.jsx";
+#include "libraries/uiImage.jsx";
 #include "functions.jsx";
 
 
@@ -14,6 +15,9 @@ Imports
 UI setup
 ----------
 */
+var panelName = "Lower Thirds";
+var scriptName = "lower_third_script";
+
 // Build UI
 var uiResourceString = "group {\
     orientation: 'column',\
@@ -105,9 +109,10 @@ var uiResourceString = "group {\
 
 
 // Create Panel
-var scriptUIPanel = createPanel(this, uiResourceString, 'Lower Third');
+var scriptUIPanel = createPanel(this, uiResourceString, panelName);
 // add image to iconLogo
-scriptUIPanel.iconLogo.image = new File("C:\\Users\\fillj\\OneDrive\\Code\\AfterFX\\Learning\\class-02\\img\\logo.png");
+#include "../img/logo.png.jsx";
+scriptUIPanel.iconLogo.image = getUIImage("logo.png", scriptName, logopng);
 
 
 
