@@ -1,23 +1,52 @@
-function isWindows() {
-    return $.os.indexOf("Windows") != -1;
-}
-
-function isMacOS() {
-    return !isWindows();
-}
-
-function openUrl(url) {
-    if(isWindows()) {
-        openUrlWin(url);
-    } else {
-        openUrlMac(url);
+var OS = function () {
+    function isWindows() {
+        return $.os.indexOf("Windows") != -1;
     }
-}
 
-function openUrlWin(url) {
-}
+    function isMacOS() {
+        return !isWindows();
+    }
 
-function openUrlMac(url) {
-    var command = 'open "' + url + '"';
-    system.callSystem(command);
-}
+    function openUrl(url) {
+        if(isWindows()) {
+            openUrlWin(url);
+        } else {
+            openUrlMac(url);
+        }
+    }
+
+    function openUrlMac(url) {
+        var command = 'open "' + url + '"';
+        system.callSystem(command);
+    }
+
+    function openUrlWin(url) {
+        var command = 'start ' + url;
+        executeWinCommandlineCommand(command);
+    }
+
+    function executeWinCommandlineCommand(command) {
+        var escapedCommand = escapeForWindowsCmd(command);
+        var outerCommand = "cmd /c \"" + escapedCommand + "\"";
+        system.callSystem(outerCommand);
+    }
+
+    function escapeForWindowsCmd(string) {
+        var metaChars = ['^', '(', ')', '%', '!', '"', '<', '>', '&', '|', '\n']
+        var prefix = "^";
+        for(var i = 0; i < metaChars.length; i++) {
+            string = replaceAll(string, metaChars[i], prefix + metaChars[i]);
+        }
+        return string;
+    }
+
+    function replaceAll(string, search, replace) {
+        return string.split(search).join(replace);
+    }
+
+    return {
+        isWindows : isWindows,
+        isMacOS   : isMacOS,
+        openUrl   : openUrl
+    }
+} ();

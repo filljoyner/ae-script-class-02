@@ -5,7 +5,7 @@ function joinPath(components) {
 }
 
 function getPathSeparatorSymbol() {
-    return (isWindows() ? "\\" : "/");
+    return (OS.isWindows() ? "\\" : "/");
 }
 
 function getUserDataFolderPath() {

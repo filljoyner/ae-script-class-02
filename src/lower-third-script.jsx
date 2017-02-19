@@ -6,6 +6,7 @@ Imports
 #include "libraries/ae-helpers.jsx";
 #include "libraries/helpers.jsx";
 #include "libraries/ui.jsx";
+#include "libraries/OS.jsx";
 #include "libraries/uiImage.jsx";
 #include "functions.jsx";
 
@@ -117,6 +118,14 @@ try {
     scriptUIPanel.iconLogo.image = getUIImage("logo.png", scriptName, logopng);
 } catch(err) {
     alert("failed to create UI images: " + err.toString());
+}
+
+scriptUIPanel.iconLogo.onClick = function() {
+    try {
+        OS.openUrl("http://fxphd.com");
+    } catch(err) {
+        alert(err.toString());
+    }
 }
 
 
