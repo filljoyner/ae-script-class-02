@@ -1,19 +1,24 @@
-function createPanel(thisObj, resourceString, panelTitle)
-{
-    var appPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", panelTitle, undefined, {resizeable: true});
+var ui = (function() {
+    function createPanel(thisObj, resourceString, panelTitle) {
+        var appPanel = (thisObj instanceof Panel) ? thisObj : new Window("palette", panelTitle, undefined, {resizeable: true});
 
-    if (appPanel == null) return appPanel;
+        if (appPanel == null) return appPanel;
 
-    var createdUI = appPanel.add(resourceString);
+        var createdUI = appPanel.add(resourceString);
 
-    appPanel.layout.layout(true);
-    appPanel.layout.resize();
-    appPanel.onResizing = appPanel.onResize = function() {
-        this.layout.resize();
+        appPanel.layout.layout(true);
+        appPanel.layout.resize();
+        appPanel.onResizing = appPanel.onResize = function() {
+            this.layout.resize();
+        }
+        if((appPanel != null) && (appPanel instanceof Window)) {
+            appPanel.show();
+        }
+
+        return createdUI;
     }
-    if((appPanel != null) && (appPanel instanceof Window)) {
-        appPanel.show();
-    }
 
-    return createdUI;
-}
+    return {
+        createPanel : createPanel
+    }
+})();
