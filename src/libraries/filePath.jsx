@@ -1,4 +1,4 @@
-#include "OS.jsx";
+#include "OS.jsx"
 
 function joinPath(components) {
     return components.join(getPathSeparatorSymbol());

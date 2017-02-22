@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/filljoyner/ae-script-class-02#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-include": "^2.3.1",
+    "gulp-replace": "^0.5.4"
   }
 }

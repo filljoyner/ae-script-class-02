@@ -1,3 +1,5 @@
 class_files
 lower_third_project
 node_modules
+.temp
+dist

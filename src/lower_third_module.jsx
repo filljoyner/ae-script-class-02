@@ -1,12 +1,12 @@
 var lowerThirdUI = (function() {
-    #include "libraries/ui.jsx";
-    #include "libraries/uiImage.jsx";
-    #include "libraries/ae-helpers.jsx";
-    #include "libraries/helpers.jsx";
-    #include "functions.jsx";
+    #include "libraries/ui.jsx"
+    #include "libraries/uiImage.jsx"
+    #include "libraries/ae_helpers.jsx"
+    #include "libraries/helpers.jsx"
+    #include "functions.jsx"
 
-    var panelName = "Lower Thirds";
-    var scriptName = "lower_third_script";
+    var panelName = "Lower Thirds"
+    var scriptName = "lower_third_script"
     var scriptUIPanel;
 
     // Build UI
@@ -104,7 +104,7 @@ var lowerThirdUI = (function() {
         scriptUIPanel = ui.createPanel(this, uiResourceString, panelName);
 
         // add image to iconLogo
-        #include "../img/logo.png.jsx";
+        #include "../img/logo.png.jsx"
         scriptUIPanel.iconLogo.image = getUIImage("logo.png", scriptName, logopng);
 
         scriptUIPanel.applyButtonGroup.applyButton.onClick = function() {
@@ -133,7 +133,7 @@ var lowerThirdUI = (function() {
 
 
         scriptUIPanel.iconLogo.onClick = function() {
-            #include "libraries/OS.jsx";
+            #include "libraries/OS.jsx"
 
             try {
                 OS.openUrl("http://fxphd.com");

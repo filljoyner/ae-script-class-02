@@ -1,8 +1,8 @@
 lowerThirdCSV = (function() {
-    #include "libraries/ae-helpers.jsx";
-    #include "libraries/helpers.jsx";
-    #include "functions.jsx";
-    #include "libraries/CSV.jsx";
+    #include "libraries/ae_helpers.jsx"
+    #include "libraries/helpers.jsx"
+    #include "functions.jsx"
+    #include "libraries/CSV.jsx"
 
     var csv;
     var csvData;

@@ -1,5 +1,5 @@
-#include "binaryFile.jsx";
-#include "filePath.jsx";
+#include "binaryFile.jsx"
+#include "filePath.jsx"
 
 function getUIImage(fileName, toolName, rawData) {
     return getBinaryFile(getImagePath(fileName, toolName), rawData);
